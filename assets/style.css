@@ -5,10 +5,6 @@
         }
   
         body {
-            background: -webkit-linear-gradient(left, #19111f 0%, #2c1e37 100%);
-            background: -moz-linear-gradient(left, #19111f 0%, #2c1e37 100%);
-            background: -o-linear-gradient(left, #19111f 0%, #2c1e37 100%);
-            background: -ms-linear-gradient(left, #19111f 0%, #2c1e37 100%);
             background: linear-gradient(to right, #19111f 0%, #2c1e37 100%);
             color: #ede6d5;
             font-family: "Georgia",serif;
@@ -23,14 +19,10 @@
         }
   
         a {
-            color: #a085c6;
+            color: #546fde;
             text-decoration: none;
             font-size: 1em;
-            -webkit-transition: all 1s;
-            -moz-transition: all 1s;
-            -o-transition: all 1s;
-            -ms-transition: all 1s;
-            transition: all 1s
+                       transition: all 1s
         }
   
         a:hover {
