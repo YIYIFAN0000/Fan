@@ -1,0 +1,15 @@
+figure
+outputs\smoke\figures\predictor_test_metrics.png
+outputs\smoke\figures\predictor_test_metrics.pdf
+outputs\smoke\figures\predictor_training_curves.png
+outputs\smoke\figures\predictor_training_curves.pdf
+outputs\smoke\figures\predictor_roc_pr_curves.png
+outputs\smoke\figures\predictor_roc_pr_curves.pdf
+outputs\smoke\figures\gan_training_curves.png
+outputs\smoke\figures\gan_training_curves.pdf
+outputs\smoke\figures\candidate_quality_distributions.png
+outputs\smoke\figures\candidate_quality_distributions.pdf
+outputs\smoke\figures\candidate_activity_toxicity_structure.png
+outputs\smoke\figures\candidate_activity_toxicity_structure.pdf
+outputs\smoke\figures\candidate_gxy_frame_preservation.png
+outputs\smoke\figures\candidate_gxy_frame_preservation.pdf

@@ -1,0 +1,1 @@
+"""ColAMP-GAN package."""

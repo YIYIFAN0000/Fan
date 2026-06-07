@@ -1,0 +1,17 @@
+record_id,n_windows
+sp|P02453|CO1A1_BOVIN Collagen alpha-1(I) chain OS=Bos taurus OX=9913 GN=COL1A1 PE=1 SV=3,9841
+sp|P02467|CO1A2_CHICK Collagen alpha-2(I) chain OS=Gallus gallus OX=9031 GN=COL1A2 PE=1 SV=3,7218
+sp|P02465|CO1A2_BOVIN Collagen alpha-2(I) chain OS=Bos taurus OX=9913 GN=COL1A2 PE=1 SV=2,6770
+sp|P02457|CO1A1_CHICK Collagen alpha-1(I) chain OS=Gallus gallus OX=9031 GN=COL1A1 PE=1 SV=3,5981
+sp|P11087|CO1A1_MOUSE Collagen alpha-1(I) chain OS=Mus musculus OX=10090 GN=Col1a1 PE=1 SV=4,4433
+tr|Q910C0|Q910C0_ONCMY Collagen a1(I) OS=Oncorhynchus mykiss OX=8022 GN=COL1A1 PE=2 SV=1,4220
+sp|P08123|CO1A2_HUMAN Collagen alpha-2(I) chain OS=Homo sapiens OX=9606 GN=COL1A2 PE=1 SV=7,3983
+tr|A0A8W4FM91|A0A8W4FM91_PIG Collagen type I alpha 2 chain OS=Sus scrofa OX=9823 GN=COL1A2 PE=1 SV=1,2971
+sp|Q01149|CO1A2_MOUSE Collagen alpha-2(I) chain OS=Mus musculus OX=10090 GN=Col1a2 PE=1 SV=2,2868
+sp|O93484|CO1A2_ONCMY Collagen alpha-2(I) chain OS=Oncorhynchus mykiss OX=8022 GN=col1a2 PE=2 SV=2,2516
+sp|P02452|CO1A1_HUMAN Collagen alpha-1(I) chain OS=Homo sapiens OX=9606 GN=COL1A1 PE=1 SV=6,2455
+tr|A0A287A1S6|A0A287A1S6_PIG Collagen alpha-1(I) chain preproprotein OS=Sus scrofa OX=9823 GN=COL1A1 PE=1 SV=1,2322
+sp|P02466|CO1A2_RAT Collagen alpha-2(I) chain OS=Rattus norvegicus OX=10116 GN=Col1a2 PE=1 SV=3,2248
+sp|P02454|CO1A1_RAT Collagen alpha-1(I) chain OS=Rattus norvegicus OX=10116 GN=Col1a1 PE=1 SV=5,836
+tr|A0AC11C1N4|A0AC11C1N4_SHEEP Collagen type I alpha 2 chain OS=Ovis aries OX=9940 GN=COL1A2 PE=4 SV=1,826
+tr|A0AC11BJI1|A0AC11BJI1_SHEEP Collagen type I alpha 1 chain OS=Ovis aries OX=9940 GN=COL1A1 PE=4 SV=1,512

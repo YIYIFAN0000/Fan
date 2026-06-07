@@ -1,0 +1,152 @@
+seed: 42
+
+paths:
+  raw_dir: data/raw_user
+  processed_dir: data/processed
+  output_dir: outputs
+  sheep_collagen_fasta: data/raw_user/collagen_type_I_fasta/common_sources_typeI_collagen_COL1A1_COL1A2_all.fasta
+  amp_positive_csv: data/processed/amp_positive.csv
+  non_amp_negative_csv: data/processed/non_amp_negative.csv
+  collagen_windows_csv: data/processed/sheep_collagen_windows.csv
+  train_dataset_csv: data/processed/train_dataset.csv
+  candidate_pool_csv: data/processed/candidate_pool.csv
+  predictor_dir: outputs/predictors
+  checkpoint_dir: outputs/checkpoints
+
+data:
+  seq_len: 30
+  collagen_stride: 1
+  min_unique_ratio: 0.25
+  min_collagen_motif_score: 0.40
+  min_glycine_frame_fraction: 0.45
+  min_len: 8
+  max_len: 30
+  collagen_window_min_len: 8
+  collagen_window_max_len: 30
+  max_collagen_windows: 60000
+  negative_samples: 3000
+  negative_strategy_version: real_non_amp_amplify_v1
+  variable_length_version: masked_length_head_v1
+
+model:
+  vocab_size: 20
+  latent_dim: 64
+  hidden_dim: 256
+  predictor_hidden_dim: 128
+
+esm:
+  enabled: true
+  model_name: facebook/esm2_t6_8M_UR50D
+  local_files_only: true
+  embedding_mode: token
+  embedding_dim: 320
+  batch_size: 16
+  cache_dir: data/processed/esm2_cache
+
+predictors:
+  epochs: 10
+  batch_size: 128
+  learning_rate: 0.001
+
+gan:
+  epochs: 150
+  batch_size: 64
+  critic_steps: 5
+  learning_rate: 0.0002
+  gradient_penalty_weight: 10.0
+  amp_reward_weight: 0.42
+  toxicity_penalty_weight: 0.25
+  collagen_reward_weight: 0.12
+  collagen_frame_sharpness: 5.0
+  diversity_reward_weight: 0.08
+  length_distribution_weight: 0.25
+  composition_penalty_weight: 0.45
+  low_complexity_penalty_weight: 0.35
+  repeated_motif_penalty_weight: 0.60
+  max_positive_fraction: 0.34
+  max_arginine_fraction: 0.18
+  max_lysine_fraction: 0.18
+  max_proline_fraction: 0.36
+  max_glycine_fraction: 0.42
+  max_charge_density: 0.28
+  min_sequence_entropy: 0.55
+  penalized_motifs:
+    - GPP
+    - PPP
+    - PGP
+    - PPG
+    - RRR
+    - KKK
+    - RKR
+    - KRK
+  length_temperature: 1.0
+  real_collagen_fraction: 0.25
+  save_every: 10
+
+generation:
+  num_samples: 8000
+  temperature: 0.95
+  length_temperature: 1.0
+  top_k: 100
+  batch_size: 1024
+  max_rounds: 30
+  collagen_guided_decoding: false
+  xy_proline_boost: 1.0
+
+filtering:
+  min_charge: 1.0
+  max_charge: 6.0
+  max_charge_density: 0.32
+  min_hydrophobic_fraction: 0.30
+  max_hydrophobic_fraction: 0.70
+  max_cysteines: 1
+  max_repeat_fraction: 0.36
+  max_positive_fraction: 0.38
+  max_arginine_fraction: 0.22
+  max_lysine_fraction: 0.22
+  max_proline_fraction: 0.46
+  max_glycine_fraction: 0.46
+  max_longest_run_fraction: 0.22
+  max_dipeptide_repeat_fraction: 0.34
+  max_tripeptide_repeat_fraction: 0.28
+  min_sequence_entropy: 0.46
+  min_amp_probability: 0.60
+  max_toxicity_probability: 0.50
+  min_collagen_motif_score: 0.45
+  min_glycine_frame_fraction: 0.50
+  max_similarity_to_training: 0.95
+  similarity_reference_limit: 20000
+
+ranking:
+  amp_weight: 0.35
+  toxicity_weight: 0.20
+  charge_weight: 0.06
+  preferred_charge_min: 1.0
+  preferred_charge_max: 5.0
+  charge_excess_penalty_weight: 0.45
+  hydrophobic_weight: 0.10
+  collagen_weight: 0.16
+  xy_proline_weight: 0.03
+  novelty_penalty_weight: 0.10
+  novelty_threshold: 0.95
+  repeat_penalty_weight: 0.08
+  dipeptide_repeat_penalty_weight: 0.22
+  tripeptide_repeat_penalty_weight: 0.28
+  longest_run_penalty_weight: 0.10
+  positive_fraction_penalty_weight: 0.22
+  arginine_fraction_penalty_weight: 0.22
+  proline_fraction_penalty_weight: 0.12
+  glycine_fraction_penalty_weight: 0.08
+  low_entropy_penalty_weight: 0.28
+  max_selected_similarity: 0.76
+  shortlist_k: 50
+  shortlist_min_collagen_motif_score: 0.60
+  shortlist_min_glycine_frame_fraction: 0.60
+  shortlist_min_amp_probability: 0.70
+  shortlist_max_toxicity_probability: 0.35
+  shortlist_max_charge: 5.0
+  shortlist_max_positive_fraction: 0.28
+  shortlist_max_dipeptide_repeat_fraction: 0.22
+  shortlist_max_tripeptide_repeat_fraction: 0.16
+  shortlist_min_sequence_entropy: 0.55
+  shortlist_max_selected_similarity: 0.72
